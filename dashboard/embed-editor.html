@@ -1,0 +1,131 @@
+<!-- Embed Editor Section -->
+<section id="embed-editor" class="content-section">
+    <header class="section-header">
+        <h1>Embed Editor</h1>
+        <p>Create and manage your Discord embeds</p>
+    </header>
+    
+    <!-- Message List View -->
+    <div id="message-list-view" class="message-list-container">
+        <div class="message-list-header">
+            <h2>Your Messages</h2>
+            <button class="btn btn-primary" id="create-new-message">
+                <span class="btn-icon">➕</span>
+                Create New
+            </button>
+        </div>
+        
+        <div id="message-cards-container" class="message-cards">
+            <!-- Message cards will be populated here -->
+        </div>
+        
+        <div id="no-messages-message" class="no-messages">
+            <div class="no-messages-icon">📝</div>
+            <h3>You haven't created any messages yet.</h3>
+            <p>Get started by creating your first message!</p>
+            <button class="btn btn-primary" id="create-first-message">Create New Message</button>
+        </div>
+    </div>
+    
+    <!-- Message Builder View -->
+    <div id="message-builder-view" class="message-builder-container" style="display: none;">
+        <div class="builder-header">
+            <button class="btn btn-secondary" id="back-to-list">
+                <span class="btn-icon">←</span>
+                Back to List
+            </button>
+            <h2 id="builder-title">Create New Message</h2>
+            <div class="builder-actions">
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="preview">Preview</button>
+                    <button class="toggle-btn" data-view="code">Code</button>
+                </div>
+                <button class="btn btn-primary" id="save-message">
+                    <span class="btn-icon">💾</span>
+                    Save Message
+                </button>
+            </div>
+        </div>
+        
+        <div class="builder-content">
+            <!-- Preview View -->
+            <div id="preview-view" class="preview-view">
+                <!-- Message Editor Panel -->
+                <div class="message-editor-panel">
+                    <!-- Simple Bot Message -->
+                    <div class="bot-message-section">
+                        <h3>Bot Message</h3>
+                        <textarea id="message-content" placeholder="Type your message here..." maxlength="2000"></textarea>
+                    </div>
+                    
+                    <!-- Add Embed Button -->
+                    <div class="add-embed-section">
+                        <button class="btn btn-secondary" id="add-embed-btn">
+                            <span class="btn-icon">➕</span>
+                            Add Embed
+                        </button>
+                    </div>
+                    
+                    <!-- Embeds Container -->
+                    <div id="embeds-container">
+                        <!-- Embeds will be added here -->
+                    </div>
+                    
+                    <!-- Add Button Section -->
+                    <div class="add-button-section" style="display: none;">
+                        <h3>Message Buttons</h3>
+                        <div class="button-controls">
+                            <select id="button-type">
+                                <option value="primary">Primary</option>
+                                <option value="secondary">Secondary</option>
+                                <option value="success">Success</option>
+                                <option value="danger">Danger</option>
+                                <option value="link">Link</option>
+                            </select>
+                            <input type="text" id="button-label" placeholder="Button Label" maxlength="80">
+                            <input type="text" id="button-url" placeholder="URL (for link buttons)" style="display: none;">
+                            <button class="btn btn-secondary" id="add-button-btn">Add Button</button>
+                        </div>
+                        <div id="buttons-container">
+                            <!-- Buttons will be added here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Live Preview Panel -->
+                <div class="preview-panel">
+                    <h3>Live Preview</h3>
+                    <div class="discord-preview">
+                        <div class="discord-message">
+                            <div class="message-author">
+                                <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Bot Avatar" class="author-avatar">
+                                <span class="author-name">Discord Bot</span>
+                                <span class="bot-tag">BOT</span>
+                                <span class="timestamp">Today at 12:00</span>
+                            </div>
+                            <div class="message-body">
+                                <div id="preview-content" class="message-text">Type your message here...</div>
+                                <div id="preview-embeds" class="message-embeds"></div>
+                                <div id="preview-buttons" class="message-buttons"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Code View -->
+            <div id="code-view" class="code-view" style="display: none;">
+                <div class="code-editor">
+                    <div class="code-header">
+                        <h3>JSON Code</h3>
+                        <button class="btn btn-secondary" id="copy-code">
+                            <span class="btn-icon">📋</span>
+                            Copy Code
+                        </button>
+                    </div>
+                    <textarea id="code-content" class="code-textarea" placeholder="JSON will appear here..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,214 @@
+<!-- Subscriptions Section -->
+<section id="subscriptions" class="content-section">
+    <header class="section-header">
+        <h1>Subscription System</h1>
+        <p>Manage subscription messages and settings</p>
+    </header>
+    <div class="subscription-container">
+        <div class="subscription-settings">
+            <div class="settings-card">
+                <h3>Welcome Message</h3>
+                <div class="form-group">
+                    <label for="welcome-title">Title</label>
+                    <input type="text" id="welcome-title" placeholder="Welcome to Premium!">
+                </div>
+                <div class="form-group">
+                    <label for="welcome-message">Message</label>
+                    <textarea id="welcome-message" placeholder="Thank you for subscribing..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="welcome-color">Color</label>
+                    <input type="color" id="welcome-color" value="#10b981">
+                </div>
+                <button class="btn btn-primary">Save Welcome Message</button>
+            </div>
+            <div class="settings-card">
+                <h3>Cancellation Message</h3>
+                <div class="form-group">
+                    <label for="cancel-title">Title</label>
+                    <input type="text" id="cancel-title" placeholder="Sorry to see you go">
+                </div>
+                <div class="form-group">
+                    <label for="cancel-message">Message</label>
+                    <textarea id="cancel-message" placeholder="We're sorry to see you cancel..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cancel-color">Color</label>
+                    <input type="color" id="cancel-color" value="#ef4444">
+                </div>
+                <button class="btn btn-primary">Save Cancellation Message</button>
+            </div>
+        </div>
+        <div class="subscription-plans">
+            <h3>Subscription Plans</h3>
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h4>Basic Plan</h4>
+                    <p class="plan-price">$9.99/month</p>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ 10 Custom Messages</li>
+                    <li>✓ Basic Templates</li>
+                    <li>✓ Community Support</li>
+                </ul>
+                <button class="btn btn-outline">Manage Plan</button>
+            </div>
+            <div class="plan-card featured">
+                <div class="plan-header">
+                    <h4>Premium Plan</h4>
+                    <p class="plan-price">$19.99/month</p>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ Unlimited Messages</li>
+                    <li>✓ Premium Templates</li>
+                    <li>✓ Priority Support</li>
+                    <li>✓ Custom Branding</li>
+                </ul>
+                <button class="btn btn-primary">Manage Plan</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Support Section -->
+<section id="support" class="content-section">
+    <header class="section-header">
+        <h1>Support Ticket Setup</h1>
+        <p>Configure support ticket system</p>
+    </header>
+    <div class="support-container">
+        <div class="ticket-form-builder">
+            <h3>Ticket Form Builder</h3>
+            <div class="form-builder">
+                <div class="field-options">
+                    <button class="btn btn-secondary" onclick="addField('text')">Add Text Field</button>
+                    <button class="btn btn-secondary" onclick="addField('select')">Add Dropdown</button>
+                    <button class="btn btn-secondary" onclick="addField('textarea')">Add Text Area</button>
+                    <button class="btn btn-secondary" onclick="addField('checkbox')">Add Checkbox</button>
+                </div>
+                <div class="form-preview" id="form-preview">
+                    <div class="form-field">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Enter ticket subject">
+                    </div>
+                    <div class="form-field">
+                        <label>Priority</label>
+                        <select>
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Description</label>
+                        <textarea placeholder="Describe your issue..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="support-settings">
+            <h3>Support Settings</h3>
+            <div class="settings-card">
+                <div class="setting-item">
+                    <label>Auto-reply enabled</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="auto-reply" checked>
+                        <span class="slider"></span>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label>Email notifications</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="email-notifications" checked>
+                        <span class="slider"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="auto-reply-message">Auto-reply message</label>
+                    <textarea id="auto-reply-message" placeholder="Thank you for contacting support..."></textarea>
+                </div>
+                <button class="btn btn-primary">Save Settings</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ranks Section -->
+<section id="ranks" class="content-section">
+    <header class="section-header">
+        <h1>Rank Creation</h1>
+        <p>Create and manage user ranks</p>
+    </header>
+    <div class="ranks-container">
+        <div class="rank-creator">
+            <h3>Create New Rank</h3>
+            <div class="rank-form">
+                <div class="form-group">
+                    <label for="rank-name">Rank Name</label>
+                    <input type="text" id="rank-name" placeholder="Enter rank name">
+                </div>
+                <div class="form-group">
+                    <label for="rank-color">Rank Color</label>
+                    <input type="color" id="rank-color" value="#3b82f6">
+                </div>
+                <div class="form-group">
+                    <label for="rank-icon">Rank Icon</label>
+                    <select id="rank-icon">
+                        <option value="🏆">🏆 Trophy</option>
+                        <option value="👑">👑 Crown</option>
+                        <option value="⭐">⭐ Star</option>
+                        <option value="🎖️">🎖️ Medal</option>
+                        <option value="💎">💎 Diamond</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rank-level">Level Requirement</label>
+                    <input type="number" id="rank-level" min="1" placeholder="Required level">
+                </div>
+                <div class="form-group">
+                    <label for="rank-permissions">Permissions</label>
+                    <div class="permission-checkboxes">
+                        <label><input type="checkbox"> Admin Access</label>
+                        <label><input type="checkbox"> Moderate Chat</label>
+                        <label><input type="checkbox"> Kick Members</label>
+                        <label><input type="checkbox"> Ban Members</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="createRank()">Create Rank</button>
+            </div>
+        </div>
+        <div class="rank-preview">
+            <h3>Rank Preview</h3>
+            <div class="rank-card-preview" id="rank-preview">
+                <div class="rank-icon">🏆</div>
+                <div class="rank-info">
+                    <h4 class="rank-name">Sample Rank</h4>
+                    <p class="rank-level">Level 10</p>
+                </div>
+            </div>
+            <div class="existing-ranks">
+                <h4>Existing Ranks</h4>
+                <div class="rank-list">
+                    <div class="rank-item">
+                        <span class="rank-icon">👑</span>
+                        <span class="rank-name">Administrator</span>
+                        <span class="rank-level">Lv. 100</span>
+                        <button class="btn btn-small">Edit</button>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-icon">🎖️</span>
+                        <span class="rank-name">Moderator</span>
+                        <span class="rank-level">Lv. 50</span>
+                        <button class="btn btn-small">Edit</button>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-icon">⭐</span>
+                        <span class="rank-name">Member</span>
+                        <span class="rank-level">Lv. 1</span>
+                        <button class="btn btn-small">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

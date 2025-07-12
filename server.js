@@ -511,8 +511,11 @@ app.get('/servers', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dashboard.html'));
+    res.redirect('/dashboard/dashboard-main.html');
 });
+
+// Serve dashboard files
+app.use('/dashboard', express.static(path.join(__dirname, 'dashboard')));
 
 
 // Start server

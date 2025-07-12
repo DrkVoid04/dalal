@@ -1,0 +1,46 @@
+<!-- Community Section -->
+<section id="community" class="content-section">
+    <header class="section-header">
+        <h1>Community Messages</h1>
+        <p>Browse and use community-created messages</p>
+    </header>
+    
+    <div class="community-controls">
+        <input type="text" id="community-search" placeholder="Search messages..." class="search-input">
+        <select id="community-category" class="select-input">
+            <option value="">All Categories</option>
+            <option value="welcome">Welcome Messages</option>
+            <option value="leave">Leave Messages</option>
+            <option value="tickets">Ticket Templates</option>
+            <option value="announcement">Announcements</option>
+            <option value="logs">Log Templates</option>
+            <option value="moderation">Moderation</option>
+            <option value="fun">Fun & Games</option>
+            <option value="other">Other</option>
+        </select>
+        <div class="tags-filter">
+            <select id="community-tags" class="select-input" multiple>
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="welcome">Welcome</option>
+                <option value="dm">DM</option>
+                <option value="advertisement">Advertisement</option>
+                <option value="gaming">Gaming</option>
+                <option value="music">Music</option>
+                <option value="art">Art</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" id="search-community">Search</button>
+    </div>
+    
+    <div id="community-messages" class="community-grid">
+        <!-- Community messages will be loaded here -->
+    </div>
+    
+    <div id="community-loading" class="loading-state" style="display: none;">
+        <div class="loading"></div>
+        <p>Loading community messages...</p>
+    </div>
+</section>
