@@ -14,15 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function updateDashboardUserDisplay() {
-    // In test mode, use test user data
-    if (window.location.hostname.includes('staticblitz') || window.location.hostname.includes('localhost')) {
-        const avatarElement = document.getElementById('user-avatar-dashboard');
-        const usernameElement = document.getElementById('user-username-dashboard');
-        if (avatarElement) avatarElement.src = 'https://cdn.discordapp.com/embed/avatars/0.png';
-        if (usernameElement) usernameElement.textContent = 'Test User';
-        return;
-    }
-    
     try {
         const res = await fetch('/api/auth/user');
         if (res.ok) {
@@ -36,41 +27,6 @@ async function updateDashboardUserDisplay() {
 }
 
 async function populateServerSwitcher() {
-    // In test mode, use test guilds
-    if (window.location.hostname.includes('staticblitz') || window.location.hostname.includes('localhost')) {
-        const switcherBtn = document.getElementById('server-switcher-btn');
-        const dropdown = document.getElementById('server-switcher-dropdown');
-        
-        if (switcherBtn) {
-            switcherBtn.innerHTML = `
-                <div class="server-icon-initial">T</div>
-                <span>Test Server</span>
-                <span class="chevron">▼</span>
-            `;
-        }
-        
-        if (dropdown) {
-            dropdown.innerHTML = `
-                <div class="dropdown-header">Test Servers</div>
-                <a href="/dashboard?guild=123456789" class="dropdown-item">
-                    <div class="server-icon-initial">T</div>
-                    <span>Test Server</span>
-                </a>
-                <a href="/dashboard?guild=987654321" class="dropdown-item">
-                    <div class="server-icon-initial">D</div>
-                    <span>Demo Community</span>
-                </a>
-            `;
-        }
-        
-        if (switcherBtn) {
-            switcherBtn.addEventListener('click', () => {
-                if (dropdown) dropdown.classList.toggle('show');
-            });
-        }
-        return;
-    }
-    
     try {
         const params = new URLSearchParams(window.location.search);
         const currentGuildId = params.get('guild');
@@ -115,19 +71,6 @@ async function populateServerSwitcher() {
 }
 
 async function initializeApp() {
-    // In test mode, skip authentication
-    if (window.location.hostname.includes('staticblitz') || window.location.hostname.includes('localhost')) {
-        currentUser = { 
-            username: 'Test User', 
-            discordId: 'test123', 
-            avatar: '0',
-            _id: 'test-user-id'
-        };
-        hideAuthModal();
-        loadUserMessages();
-        return;
-    }
-    
     try {
         const response = await fetch('/api/auth/user');
         if (response.ok) {

@@ -191,7 +191,7 @@ app.get('/api/rating/check/:discordId', async (req, res) => {
 // --- Guild (Server) Routes ---
 app.get('/api/guilds/mutual', async (req, res) => {
     // Test mode bypass
-    if (process.env.TEST_MODE === 'true' || req.headers.host?.includes('staticblitz')) {
+    if (process.env.TEST_MODE === 'true') {
         const testGuilds = [
             {
                 id: '123456789',
@@ -201,16 +201,6 @@ app.get('/api/guilds/mutual', async (req, res) => {
                 description: 'A test server for development',
                 approximate_member_count: 100,
                 approximate_presence_count: 50,
-                permissions: '8'
-            },
-            {
-                id: '987654321',
-                name: 'Demo Community',
-                icon: null,
-                banner: null,
-                description: 'Another test server for demonstration',
-                approximate_member_count: 250,
-                approximate_presence_count: 120,
                 permissions: '8'
             }
         ];
@@ -321,39 +311,6 @@ app.post('/api/messages', async (req, res) => {
 // Get User Messages
 app.get('/api/messages', async (req, res) => {
     try {
-        // In test mode, return sample messages
-        if (process.env.TEST_MODE === 'true' || req.headers.host?.includes('staticblitz')) {
-            const sampleMessages = [
-                {
-                    _id: 'test-message-1',
-                    messageId: 'ABC1234',
-                    content: 'Welcome to our server!',
-                    embeds: [{
-                        title: 'Welcome!',
-                        description: 'Thanks for joining our community.',
-                        color: 3447003
-                    }],
-                    is_public: false,
-                    createdAt: new Date(),
-                    updatedAt: new Date()
-                },
-                {
-                    _id: 'test-message-2',
-                    messageId: 'XYZ5678',
-                    content: 'Server rules and guidelines',
-                    embeds: [{
-                        title: 'Server Rules',
-                        description: 'Please follow these rules to maintain a friendly environment.',
-                        color: 15158332
-                    }],
-                    is_public: true,
-                    createdAt: new Date(),
-                    updatedAt: new Date()
-                }
-            ];
-            return res.json(sampleMessages);
-        }
-        
         let query = {};
         if (req.isAuthenticated()) {
             query.userId = req.user._id;
